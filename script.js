@@ -77,7 +77,7 @@ function check(event)
             operator = event.target.innerHTML;
             manageHist(nb,event.target.innerHTML);
             previous = parseFloat(nb);
-            nb = 0;
+            nb = '';
             start = false;
         }
        else
@@ -96,7 +96,7 @@ function manageOperation()
 {
     previous = current;
     num.innerHTML = current.toString();
-    nb = 0;
+    nb = '';
     start = false;
 }
 
@@ -131,7 +131,7 @@ function calculate()
     {
         blink();
     }
-    if (previous != null)
+    if (previous != null && nb != '')
     {   
        operate();
        num.innerHTML = current.toString();
